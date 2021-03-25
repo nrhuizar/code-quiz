@@ -1,0 +1,28 @@
+*{
+    margin: 10px;
+    padding: auto;
+}
+
+:root{
+    --primary: blue;
+}
+
+header{
+    display: flex;
+    margin: 20;
+    justify-content: space-between;
+    padding-bottom: 10%;
+}
+
+main{
+    text-align: center;
+    vertical-align: center;
+    border: 2px inset var(--primary);
+    margin: auto;
+    padding: auto;
+}
+
+button{
+    background-color: var(--primary);
+    color: white;
+}
