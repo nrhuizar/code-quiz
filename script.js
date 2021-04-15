@@ -1,25 +1,23 @@
 const questions = [
-    { question: "Which is NOT a part of CRUD?", answer: "Create Repeat Update Deconste", answerCheck: 1 },
-    { question: "Which reference means this or this?", answer: "=== && || //", answerCheck: 2 },
-    { question: "Arrays in JavaScript contain ___.", answer: "data secrets everything conditionals", answerCheck: 0 },
-    { question: "Where push and pull front end data?", answer: "localStorage reality word.doc localSession", answerCheck: 0 },
+    { question: "Whic variable is no longer used in ES6?", answer: "var div let const", answerCheck: 0 },
+    { question: "Which means strict equality?", answer: "=== && || //", answerCheck: 0 },
+    { question: "Who made Visual Studio Code", answer: "Uber you Microsoft Twitter", answerCheck: 2 },
+    { question: "Where can you store convenient data on the front end?", answer: "localStorage reality word.doc localspot", answerCheck: 0 },
     { question: "What is the html landing page file named?", answer: "lp.html home.html front.html index.html", answerCheck: 3 },
     { question: "What is used to style an html page?", answer: "JS CSS API CRUD", answerCheck: 1 },
   ];
-const score = 0;
-const i = 0;
-const t = 100
-const body = document.body;
-const splitAnswer = questions[i].answer.split(" ");
-const currentQuestion = questions[i].question
+let score = 0;
+let i = 0;
+let t = 120
+let body = document.body;
+let splitAnswer = questions[i].answer.split(" ");
+let currentQuestion = questions[i].question
 
-const Q = document.querySelector('#question')
-const A1 = document.querySelector('#a')
-const A2 = document.querySelector('#b')
-const A3 = document.querySelector('#c')
-const A4 = document.querySelector('#d')
-
-localStorage.setItem('youGotHighScore', false)
+let Q = document.querySelector('#question')
+let A1 = document.querySelector('#a')
+let A2 = document.querySelector('#b')
+let A3 = document.querySelector('#c')
+let A4 = document.querySelector('#d')
 
 //set initial question
 Q.textContent = currentQuestion;
@@ -65,7 +63,7 @@ A4.addEventListener('click', () => {
 
 //timer
 const timer = document.querySelector('#timer');
-const goToNewPage = false;
+let goToNewPage = false;
 timer.textContent = 'Timer: ' + t + ' seconds';
 
 setInterval ( () => { 
@@ -86,7 +84,7 @@ setInterval ( () => {
 
     //if check = checked then there is a list of players
     if (check === 'checked') {
-        const localStoragePlayers = localStorage.getItem('players');
+        let localStoragePlayers = localStorage.getItem('players');
         const highScore = localStoragePlayers.split('/');
 
         //If the players current score is > than the high score update high score
@@ -120,9 +118,9 @@ if (goToNewPage === true) {
 const recentScore = localStorage.getItem('recentScore');
 console.log(recentScore);
 
-const yourScore = document.querySelector('.score');
 if (recentScore){
-yourScore.textContent = 'Your Score: ' + recentScore;
+    const yourScore = document.querySelector('#yourScore');
+    yourScore.innerHTML = 'Your Score: ' + recentScore;
 }
 const showHighScore = localStorage.getItem('players').split('/');
     const highScoreInitials = document.querySelector('#initials');
